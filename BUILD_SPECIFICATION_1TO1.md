@@ -103,14 +103,15 @@ Všech 9 oken obvodových stěn je osazeno čistými obvodovými rámy a oboustr
    - **Šířka bočních vlysů (jambs)**: $60\text{ mm}$ ($0.060\text{ m}$), stoupající od parapetu do řezové výšky $Z = 1.800\text{ m}$, kde lícuje se stěnou.
    - **Spodní vlys (rail)**: Výška $45\text{ mm}$ ležící na parapetním zdivu.
    - **Vnitřek otvoru**: Zcela volný (bez skla a bez příček).
+   - **Materiál**: `Mat_Roof_Soffit` (antracitový `#1E1E20`, RAL 7016, roughness 0.50).
 2. **Venkovní plechový parapet**:
-   - Sedí na vnější části parapetního zdiva od rámu ven s přesahem $25\text{ mm}$ před omítku a bočními lemy ($15\text{ mm}$ uši).
+   - Sedí na vnější části parapetního zdiva od rámu ven s přesahem $25\text{ mm}$ před omítku a bočními lemy ($20\text{ mm}$ uši).
    - Tloušťka plechu $8\text{ mm}$.
-   - Materiál: `Mat_Roof_Soffit` (antracitový `#1E1E20`, RAL 7016, roughness 0.50) – 100% shodný s horní střešní atikou (`Roof_Soffit_Cornice`).
-3. **Vnitřní parapetní deska**:
-   - Sedí na vnitřní části zdiva od rámu do místnosti s přesahem $15\text{ mm}$ do interiéru a bočními přesahy $15\text{ mm}$.
-   - Tloušťka desky $20\text{ mm}$.
-   - Materiál: `Mat_Interior_Door_Frame` (bílý saténový lak `#F2F0EC`, roughness 0.30).
+   - Materiál: `Mat_Roof_Soffit` (antracitový plech ladící s atikou).
+3. **Vnitřní parapetní deska s nosem (Interior Sill with Downward Nose)**:
+   - **Materiál**: `Mat_Roof_Soffit` (antracitový materiál ladící s vnějším parapetem i atikou).
+   - **Horizontální deska**: Tloušťka $20\text{ mm}$ ($Z \in [Z_{\text{sill}}, Z_{\text{sill}} + 0.020]\text{ m}$), vyložená $25\text{ mm}$ před líc vnitřní omítky do místnosti s bočními přesahy $20\text{ mm}$.
+   - **Převislý nos parapetu (lip / apron)**: Šířka $15\text{ mm}$ na čele desky, spuštěný o $20\text{ mm}$ dolů ($Z \in [Z_{\text{sill}} - 0.020, Z_{\text{sill}}]\text{ m}$), vytvářející klasický $40\text{ mm}$ vysoký čelní profil s reálným vrženým stínem na stěnu pod oknem.
 4. **Zkosení hran**: Modifikátor `Bevel` $2\text{ mm}$ s úhlem $45^\circ$ a vytvrzenými normálami (`harden_normals = True`).
 
 ### 3.2 Konstrukční usazení vchodových dveří a eliminace mezer
@@ -207,6 +208,7 @@ V koupelně (místnost 1.10) jsou stěny rozděleny na dva samostatné materiál
 - **Jižní vnitřní příčka**:
   - Sprchový kout: $X \in [0.365, 1.368]\text{ m}$ $\to$ `Plank stena`.
   - Koupelnový obklad: $X \in [1.368, 2.050]\text{ m}$ a ostění $X \in [2.750, 2.875]\text{ m}$ $\to$ `koupelna stena`.
+  - **Překlad dveří 1.11 -> 1.10**: Severní plocha překladu facing do koupelny ($X \in [2.050, 2.750]\text{ m}$, $Y = 9.900\text{ m}$, $Z \in [1.600, 1.800]\text{ m}$) a horní hrana ($Z = 1.800\text{ m}$) $\to$ `koupelna stena` / `Material` se spojitým UV mapováním navazujícím na okolní stěny.
 
 ### 5.2 Klíčová oprava vizuálních bugů (Bílé linky a trhliny na hranách)
 Bílé linky na přechodu obkladů a horních hranách vznikaly ze dvou příčin:
