@@ -104,14 +104,15 @@ Všech 9 oken obvodových stěn je osazeno čistými obvodovými rámy a oboustr
    - **Spodní vlys (rail)**: Výška $45\text{ mm}$ ležící na parapetním zdivu.
    - **Vnitřek otvoru**: Zcela volný (bez skla a bez příček).
    - **Materiál**: `Mat_Roof_Soffit` (antracitový `#1E1E20`, RAL 7016, roughness 0.50).
-2. **Venkovní plechový parapet**:
-   - Sedí na vnější části parapetního zdiva od rámu ven s přesahem $25\text{ mm}$ před omítku a bočními lemy ($20\text{ mm}$ uši).
-   - Tloušťka plechu $8\text{ mm}$.
-   - Materiál: `Mat_Roof_Soffit` (antracitový plech ladící s atikou).
-3. **Vnitřní parapetní deska s nosem (Interior Sill with Downward Nose)**:
+2. **Venkovní parapet s okapovým nosem (Exterior Sill with Downward Drip Nose)**:
+   - **Materiál**: `Mat_Roof_Soffit` (antracitový plech ladící s atikou i rámy).
+   - **Vodorovná deska**: Tloušťka $20\text{ mm}$ ($Z \in [Z_{\text{sill}} - 0.005, Z_{\text{sill}} + 0.015]\text{ m}$), vyložená $35\text{ mm}$ před vnější líc fasády s bočními lemy ($20\text{ mm}$ uši).
+   - **Převislý okapový nos (drip nose)**: Šířka $15\text{ mm}$ na vnějším čele parapetu, spuštěný o $20\text{ mm}$ dolů ($Z \in [Z_{\text{sill}} - 0.025, Z_{\text{sill}} - 0.005]\text{ m}$).
+   - **Čelní pohledová výška**: Celkem $40\text{ mm}$ fasády parapetu vytvářející zřetelnou architektonickou spáru a vržený stín na fasádní omítku pod oknem.
+3. **Vnitřní parapetní deska s převislým nosem (Interior Sill with Downward Nose)**:
    - **Materiál**: `Mat_Roof_Soffit` (antracitový materiál ladící s vnějším parapetem i atikou).
    - **Horizontální deska**: Tloušťka $20\text{ mm}$ ($Z \in [Z_{\text{sill}}, Z_{\text{sill}} + 0.020]\text{ m}$), vyložená $25\text{ mm}$ před líc vnitřní omítky do místnosti s bočními přesahy $20\text{ mm}$.
-   - **Převislý nos parapetu (lip / apron)**: Šířka $15\text{ mm}$ na čele desky, spuštěný o $20\text{ mm}$ dolů ($Z \in [Z_{\text{sill}} - 0.020, Z_{\text{sill}}]\text{ m}$), vytvářející klasický $40\text{ mm}$ vysoký čelní profil s reálným vrženým stínem na stěnu pod oknem.
+   - **Převislý nos parapetu (lip / apron)**: Šířka $15\text{ mm}$ na čele desky, spuštěný o $20\text{ mm}$ dolů ($Z \in [Z_{\text{sill}} - 0.020, Z_{\text{sill}}]\text{ m}$), vytvářející klasický $40\text{ mm}$ vysoký čelní profil s reálným vrženým stínem na stěnu pod oknem v interiéru.
 4. **Zkosení hran**: Modifikátor `Bevel` $2\text{ mm}$ s úhlem $45^\circ$ a vytvrzenými normálami (`harden_normals = True`).
 
 ### 3.2 Konstrukční usazení vchodových dveří a eliminace mezer
