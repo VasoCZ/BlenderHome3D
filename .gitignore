@@ -1,0 +1,20 @@
+# Blender binary files (>100MB blocked by GitHub)
+*.blend
+*.blend1
+*.blend2
+*.blend@
+*.blend_bak*
+
+# Allow lightweight tracked assets (<5MB)
+!assets/entrance_door.blend
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary & system files
+.DS_Store
+Thumbs.db
+*.tmp
+temp_*
