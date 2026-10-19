@@ -95,6 +95,24 @@ X = 0.000 m                                                    X = 10.000 m
 | **W6 Jih** | 1.08 WC | Západní | $Y \in [7.200, 8.000]\text{ m}$ (šířka $0.80\text{ m}$) | $1.600\text{ m}$ | Otevřeno ($1.800\text{ m}$) |
 | **W6 Sever** | 1.09 Tech. místnost| Západní | $Y \in [8.375, 9.175]\text{ m}$ (šířka $0.80\text{ m}$) | $1.750\text{ m}$ | Otevřeno ($1.800\text{ m}$) |
 
+### 3.1.1 Okenní rámy a parapety (`Window_Frames_and_Sills`)
+Všech 9 oken obvodových stěn je osazeno čistými obvodovými rámy a oboustrannými parapety bez zasklení či dělicích sloupků, takže otvory zůstávají vzdušné a otevřené do místností:
+1. **Konstrukce obvodového rámu**:
+   - **Hloubka profilu**: $70\text{ mm}$ ($0.070\text{ m}$).
+   - **Zapuštění od vnějšího líce fasády**: $120\text{ mm}$ ($12\text{ cm}$ vnější špaleta).
+   - **Šířka bočních vlysů (jambs)**: $60\text{ mm}$ ($0.060\text{ m}$), stoupající od parapetu do řezové výšky $Z = 1.800\text{ m}$, kde lícuje se stěnou.
+   - **Spodní vlys (rail)**: Výška $45\text{ mm}$ ležící na parapetním zdivu.
+   - **Vnitřek otvoru**: Zcela volný (bez skla a bez příček).
+2. **Venkovní plechový parapet**:
+   - Sedí na vnější části parapetního zdiva od rámu ven s přesahem $25\text{ mm}$ před omítku a bočními lemy ($15\text{ mm}$ uši).
+   - Tloušťka plechu $8\text{ mm}$.
+   - Materiál: `Mat_Roof_Soffit` (antracitový `#1E1E20`, RAL 7016, roughness 0.50) – 100% shodný s horní střešní atikou (`Roof_Soffit_Cornice`).
+3. **Vnitřní parapetní deska**:
+   - Sedí na vnitřní části zdiva od rámu do místnosti s přesahem $15\text{ mm}$ do interiéru a bočními přesahy $15\text{ mm}$.
+   - Tloušťka desky $20\text{ mm}$.
+   - Materiál: `Mat_Interior_Door_Frame` (bílý saténový lak `#F2F0EC`, roughness 0.30).
+4. **Zkosení hran**: Modifikátor `Bevel` $2\text{ mm}$ s úhlem $45^\circ$ a vytvrzenými normálami (`harden_normals = True`).
+
 ### 3.2 Konstrukční usazení vchodových dveří a eliminace mezer
 Vchodové dveře sestávají z prvků:
 - `Door`: Prázdný kořenový objekt (Empty) na pozici $(0, 0, 0)$.
