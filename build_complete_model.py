@@ -281,25 +281,25 @@ def build_exterior_walls(materials):
     ext_east  = create_box_mesh("Ext_East",  9.635, 10.0, 0.365, 11.635, 0.0, 1.800, materials['ext_wall'])
 
     # Cutters on South facade:
-    # Room 1.06 Window 1: X in [1.300, 2.800], sill = 1.050
-    w_ext_1_106 = create_box_mesh("Cut_Ext_W1_106", 1.300, 2.800, -0.100, 0.465, 1.050, 2.000)
+    # Room 1.06 Window 1: X in [1.300, 2.800], sill = 1.050, head = 1.600 (solid wall lintel above up to 1.800)
+    w_ext_1_106 = create_box_mesh("Cut_Ext_W1_106", 1.300, 2.800, -0.100, 0.465, 1.050, 1.600)
     apply_boolean_difference(ext_south, w_ext_1_106)
 
     # Room 1.01 Entrance Door: X in [4.640, 5.740], sill = 0.000
     d_ext_p1 = create_box_mesh("Cut_Ext_Door_P1", 4.640, 5.740, -0.100, 0.465, 0.000, 2.000)
     apply_boolean_difference(ext_south, d_ext_p1)
 
-    # Room 1.05 Window 1: X in [7.200, 8.700], sill = 1.050
-    w_ext_1_105 = create_box_mesh("Cut_Ext_W1_105", 7.200, 8.700, -0.100, 0.465, 1.050, 2.000)
+    # Room 1.05 Window 1: X in [7.200, 8.700], sill = 1.050, head = 1.600 (solid wall lintel above up to 1.800)
+    w_ext_1_105 = create_box_mesh("Cut_Ext_W1_105", 7.200, 8.700, -0.100, 0.465, 1.050, 1.600)
     apply_boolean_difference(ext_south, w_ext_1_105)
 
     # Cutters on East facade:
-    # Room 1.04 Window 2 South: Y in [5.900, 7.640], sill = 1.200
-    w_ext_2_south = create_box_mesh("Cut_Ext_W2_South", 9.535, 10.100, 5.900, 7.640, 1.200, 2.000)
+    # Room 1.04 Window 2 South: Y in [5.900, 7.640], sill = 1.200, head = 1.600 (solid wall lintel above up to 1.800)
+    w_ext_2_south = create_box_mesh("Cut_Ext_W2_South", 9.535, 10.100, 5.900, 7.640, 1.200, 1.600)
     apply_boolean_difference(ext_east, w_ext_2_south)
 
-    # Room 1.04 Window 2 North: Y in [8.780, 10.520], sill = 1.050
-    w_ext_2_north = create_box_mesh("Cut_Ext_W2_North", 9.535, 10.100, 8.780, 10.520, 1.050, 2.000)
+    # Room 1.04 Window 2 North: Y in [8.780, 10.520], sill = 1.050, head = 1.600 (solid wall lintel above up to 1.800)
+    w_ext_2_north = create_box_mesh("Cut_Ext_W2_North", 9.535, 10.100, 8.780, 10.520, 1.050, 1.600)
     apply_boolean_difference(ext_east, w_ext_2_north)
 
     # Cutters on North facade:
@@ -307,8 +307,8 @@ def build_exterior_walls(materials):
     w_ext_5 = create_box_mesh("Cut_Ext_W5", 1.120, 2.120, 11.535, 12.100, 1.350, 1.600)
     apply_boolean_difference(ext_north, w_ext_5)
 
-    # Room 1.03 Window 4: X in [3.660, 5.400], sill = 1.050
-    w_ext_4 = create_box_mesh("Cut_Ext_W4", 3.660, 5.400, 11.535, 12.100, 1.050, 2.000)
+    # Room 1.03 Window 4: X in [3.660, 5.400], sill = 1.050, head = 1.600 (solid wall lintel above up to 1.800)
+    w_ext_4 = create_box_mesh("Cut_Ext_W4", 3.660, 5.400, 11.535, 12.100, 1.050, 1.600)
     apply_boolean_difference(ext_north, w_ext_4)
 
     # Room 1.04 Patio Double Door 3: X in [7.125, 8.925], sill = 0.000
@@ -316,8 +316,8 @@ def build_exterior_walls(materials):
     apply_boolean_difference(ext_north, d_ext_patio)
 
     # Cutters on West facade:
-    # Room 1.07 Window 05: Y in [4.725, 6.225], sill = 0.900
-    w_ext_05 = create_box_mesh("Cut_Ext_W05", -0.100, 0.465, 4.725, 6.225, 0.900, 2.000)
+    # Room 1.07 Window 05: Y in [4.725, 6.225], sill = 0.900, head = 1.600 (solid wall lintel above up to 1.800)
+    w_ext_05 = create_box_mesh("Cut_Ext_W05", -0.100, 0.465, 4.725, 6.225, 0.900, 1.600)
     apply_boolean_difference(ext_west, w_ext_05)
 
     # Room 1.08 WC Window 6 South: Y in [7.200, 8.000], sill = 1.350, head = 1.600 (solid wall lintel above up to 1.800)
