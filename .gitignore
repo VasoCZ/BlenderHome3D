@@ -5,8 +5,8 @@
 *.blend@
 *.blend_bak*
 
-# Allow lightweight tracked assets (<5MB)
-!assets/entrance_door.blend
+# Allow lightweight tracked assets (<10MB)
+!assets/*.blend
 
 # Python cache
 __pycache__/
