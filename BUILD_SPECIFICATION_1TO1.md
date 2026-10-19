@@ -112,17 +112,42 @@ Vchodové dveře sestávají z prvků:
    - Rozsah: $X \in [4.640, 5.740]\text{ m}$, $Y \in [0.000, 0.365]\text{ m}$ (plná tloušťka zdi), $Z \in [1.745, 1.800]\text{ m}$.
    - Plynule překrývá horní hranu rámu dveří, takže při pohledu shora (top-down) ani v izometrii nevzniká žádná odhalená štěrbina.
 
-### 3.3 Vnitřní dveřní otvory
-| Spojení místností | Směr zdi | Souřadnice otvoru | Šířka otvoru |
-| :--- | :--- | :--- | :--- |
-| **1.01 Zádveří $\to$ 1.02 Chodba** | Horizontální | $X \in [4.700, 5.500]\text{ m}$, $Y \in [2.350, 2.475]\text{ m}$ | $0.800\text{ m}$ |
-| **1.02 Chodba $\to$ 1.05 Pokoj** | Vertikální | $Y \in [2.800, 3.600]\text{ m}$, $X \in [6.100, 6.225]\text{ m}$ | $0.800\text{ m}$ |
-| **1.02 Chodba $\to$ 1.06 Pokoj** | Vertikální | $Y \in [2.700, 3.500]\text{ m}$, $X \in [4.395, 4.520]\text{ m}$ | $0.800\text{ m}$ |
-| **1.02 Chodba $\to$ 1.07 Pokoj** | Vertikální | $Y \in [4.800, 5.600]\text{ m}$, $X \in [4.395, 4.520]\text{ m}$ | $0.800\text{ m}$ |
-| **1.11 Chodba $\to$ 1.10 Koupelna** | Horizontální | $X \in [2.050, 2.750]\text{ m}$, $Y \in [9.775, 9.900]\text{ m}$ | $0.700\text{ m}$ |
-| **1.11 Chodba $\to$ 1.08 WC** | Vertikální | $Y \in [7.250, 7.950]\text{ m}$, $X \in [1.750, 1.875]\text{ m}$ | $0.700\text{ m}$ |
-| **1.11 Chodba $\to$ 1.09 Tech** | Vertikální | $Y \in [8.550, 9.250]\text{ m}$, $X \in [1.750, 1.875]\text{ m}$ | $0.700\text{ m}$ |
-| **1.04 Obývací $\to$ 1.11 Chodba** | Vertikální | $Y \in [7.200, 8.000]\text{ m}$, $X \in [2.875, 3.000]\text{ m}$ | $0.800\text{ m}$ |
+### 3.3 Vnitřní dveřní otvory, překlady a obložkové zárubně
+
+Všech 8 vnitřních dveřních otvorů má jednotnou stavební světlost výšky $1.600\text{ m}$ v řezovém modelu (odpovídá průchozí výšce pod překladem):
+- **Stěnové překlady (`Interior_Walls`)**: Plné zdivo překladu v rozsahu $Z \in [1.600, 1.800]\text{ m}$ sjednocuje horní hranu všech vnitřních příček na $Z = 1.800\text{ m}$.
+- **Obložkové zárubně (`Interior_Door_Frames`)**:
+  - Dřevěné ostění (jamb lining) tl. $20\text{ mm}$ do vnitřního líce otvoru ($Z \in [0.000, 1.600]\text{ m}$, horní vodorovné ostění $Z \in [1.580, 1.600]\text{ m}$).
+  - Krycí obložky (architrave casing) šířky $50\text{ mm}$ přečnívající na líc stěny a vystupující $12\text{ mm}$ z plochy omítky ($Z \in [0.000, 1.650]\text{ m}$).
+  - Vodorovná horní obložka čistě osazená mezi svislé boční obložky (žádné vnitřní prolínání geometrií, nulové non-manifold artefakty).
+  - Materiál: `Mat_Interior_Door_Frame` (moderní saténový bílý lak `#F2F0EC`, roughness 0.30, specular 0.40) se zkosením hran `Bevel` $1.5\text{ mm}$ a vytvrzenými normálami (`harden_normals = True`).
+
+| Spojení místností | Směr zdi | Souřadnice otvoru | Šířka otvoru | Světlá výška |
+| :--- | :--- | :--- | :--- | :--- |
+| **1.01 Zádveří $\to$ 1.02 Chodba** | Horizontální | $X \in [4.700, 5.500]\text{ m}$, $Y \in [2.350, 2.475]\text{ m}$ | $0.800\text{ m}$ | $1.580\text{ m}$ |
+| **1.02 Chodba $\to$ 1.05 Pokoj** | Vertikální | $Y \in [2.800, 3.600]\text{ m}$, $X \in [6.100, 6.225]\text{ m}$ | $0.800\text{ m}$ | $1.580\text{ m}$ |
+| **1.02 Chodba $\to$ 1.06 Pokoj** | Vertikální | $Y \in [2.700, 3.500]\text{ m}$, $X \in [4.395, 4.520]\text{ m}$ | $0.800\text{ m}$ | $1.580\text{ m}$ |
+| **1.02 Chodba $\to$ 1.07 Pokoj** | Vertikální | $Y \in [4.800, 5.600]\text{ m}$, $X \in [4.395, 4.520]\text{ m}$ | $0.800\text{ m}$ | $1.580\text{ m}$ |
+| **1.11 Chodba $\to$ 1.10 Koupelna** | Horizontální | $X \in [2.050, 2.750]\text{ m}$, $Y \in [9.775, 9.900]\text{ m}$ | $0.700\text{ m}$ | $1.580\text{ m}$ |
+| **1.11 Chodba $\to$ 1.08 WC** | Vertikální | $Y \in [7.250, 7.950]\text{ m}$, $X \in [1.750, 1.875]\text{ m}$ | $0.700\text{ m}$ | $1.580\text{ m}$ |
+| **1.11 Chodba $\to$ 1.09 Tech** | Vertikální | $Y \in [8.550, 9.250]\text{ m}$, $X \in [1.750, 1.875]\text{ m}$ | $0.700\text{ m}$ | $1.580\text{ m}$ |
+| **1.04 Obývací $\to$ 1.11 Chodba** | Vertikální | $Y \in [7.200, 8.000]\text{ m}$, $X \in [2.875, 3.000]\text{ m}$ | $0.800\text{ m}$ | $1.580\text{ m}$ |
+
+### 3.4 Zárubňové prahy a podlahové přechody (`Floor_Threshold_*`)
+Pro zamezení prosvítání venkovní dlažby pod příčkami domu jsou ve všech dveřních otvorech vytvořeny nášlapné vrstvy podlah ($Z \in [0.000, 0.015]\text{ m}$):
+1. **Laminát $\to$ Laminát** (např. 1.02 $\to$ 1.05, 1.06, 1.07):
+   - Souvislá vrstva laminátu s identickým světovým UV mapováním (`UVMap` i `automap`), které plynule navazuje na kresbu dřeva v sousedních místnostech.
+2. **Dlažba $\to$ Dlažba** (1.11 $\to$ 1.08, 1.09, 1.10):
+   - Souvislá keramická dlažba s UV mapováním navazujícím na dlažbu chodby.
+3. **Dlažba $\to$ Laminát** (1.01 $\to$ 1.02 a 1.04 $\to$ 1.11):
+   - Půlený práh (polovina dlažba, polovina laminát) s anodizovanou hliníkovou přechodovou lištou (`Mat_Transition_Strip`, šířka $20\text{ mm}$, výška $+1.5\text{ mm}$ nad podlahu).
+4. **Vchod a terasa**:
+   - Vnitřní líc vchodových dveří ($Y \in [0.138, 0.365]$) kryt dlažbou zádveří.
+   - Vnitřní líc terasového okna ($Y \in [11.635, 11.710]$) kryt laminátem obývacího pokoje.
+
+### 3.5 Terasové posuvné okno (Japanese Sliding Window with Screen)
+- **Umístění**: Severní stěna obývacího pokoje 1.04, $X \in [7.125, 8.925]\text{ m}$, $Y \in [11.710, 11.950]\text{ m}$.
+- **Horní krytí**: Zdivo nadpraží v `Exterior_Walls` překrývá horní vodicí kolejnici v rozsahu $Z \in [1.745, 1.800]\text{ m}$, čímž eliminuje jakékoliv nezakryté spáry při pohledu shora.
 
 ---
 
@@ -139,7 +164,15 @@ Síť objektu `Foundation_Slab` je vygenerována z unifikovaných řezů bez jed
 1. **Okapový chodník**: Šířka $1.200\text{ m}$ kolem obvodu celého domu ($X \in [-1.2, 11.2]$, $Y \in [-1.2, 13.2]$).
 2. **Přední příjezdová plocha**: Šířka $6.000\text{ m}$, délka $9.000\text{ m}$ ($X \in [2.19, 8.19]$, $Y \in [-9.0, 0.0]$), přesně symetricky vycentrovaná na vchodové dveře.
 3. **Zadní terasa**: Šířka $5.000\text{ m}$, hloubka $6.000\text{ m}$ ($X \in [5.00, 10.00]$, $Y \in [12.0, 18.0]$), navazující na francouzské dveře obývacího pokoje.
-4. **Materiál dlažby**: `Mat_Outdoor_Concrete_Paving` (tmavě šedá antracitová dlažba `#2B2D31`, roughness 0.45, specular 0.35).
+4. **Materiál dlažby**: `Stone ground tile` / `Mat_Outdoor_Concrete_Paving` (antracitová betonová dlažba).
+
+### 4.3 Tloušťka desky a zahradní obrubníky (`Garden_Curbs`)
+1. **Reálná výška dlažby**: Modifikátor `Solidify` na objektu `Foundation_Slab` s tloušťkou $0.080\text{ m}$ ($8\text{ cm}$) orientovanou směrem dolů (`offset = -1.0`).
+2. **Zahradní obrubníky (`Garden_Curbs`)**:
+   - Šířka obrubníku: $0.080\text{ m}$ ($8\text{ cm}$).
+   - Výška obrubníku: Spodní hrana $Z = -0.080\text{ m}$, horní hrana $Z = +0.035\text{ m}$ ($3.5\text{ cm}$ nad úroveň dlažby).
+   - Lemuje všech 12 vnějších obvodových hran zpevněné plochy (příjezdová cesta, okapové chodníky, terasa).
+   - Materiál: `Mat_Garden_Curb` (hladký tmavší vibrolisovaný beton `#1E2022`, roughness 0.65). Vytváří přirozené ohraničení pozemku s vrženým stínem.
 
 ---
 
