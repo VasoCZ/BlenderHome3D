@@ -88,32 +88,35 @@ X = 0.000 m                                                    X = 10.000 m
 | **W1** | 1.05 Pokoj | Jižní | $X \in [7.200, 8.700]\text{ m}$ (šířka $1.50\text{ m}$) | $1.050\text{ m}$ | Otevřeno ($1.800\text{ m}$) |
 | **W2 Jih** | 1.04 Obývací pokoj | Východní | $Y \in [5.900, 7.640]\text{ m}$ (šířka $1.74\text{ m}$) | $1.200\text{ m}$ | Otevřeno ($1.800\text{ m}$) |
 | **W2 Sever** | 1.04 Obývací pokoj | Východní | $Y \in [8.780, 10.520]\text{ m}$ (šířka $1.74\text{ m}$) | $1.050\text{ m}$ | Otevřeno ($1.800\text{ m}$) |
-| **W5** | 1.10 Koupelna | Severní | $X \in [1.120, 2.120]\text{ m}$ (šířka $1.00\text{ m}$) | $1.600\text{ m}$ | Otevřeno ($1.800\text{ m}$) |
+| **W5** | 1.10 Koupelna | Severní | $X \in [1.120, 2.120]\text{ m}$ (šířka $1.00\text{ m}$) | $1.350\text{ m}$ | Překlad $1.600 \to 1.800\text{ m}$ (světlost $0.25\text{ m}$) |
 | **W4** | 1.03 Kuchyně | Severní | $X \in [3.660, 5.400]\text{ m}$ (šířka $1.74\text{ m}$) | $1.050\text{ m}$ | Otevřeno ($1.800\text{ m}$) |
 | **Francouzské 3** | 1.04 Obývací pokoj | Severní | $X \in [7.125, 8.925]\text{ m}$ (šířka $1.80\text{ m}$) | $0.000\text{ m}$ | Otevřeno ($1.800\text{ m}$) |
 | **W05** | 1.07 Pokoj | Západní | $Y \in [4.725, 6.225]\text{ m}$ (šířka $1.50\text{ m}$) | $0.900\text{ m}$ | Otevřeno ($1.800\text{ m}$) |
-| **W6 Jih** | 1.08 WC | Západní | $Y \in [7.200, 8.000]\text{ m}$ (šířka $0.80\text{ m}$) | $1.600\text{ m}$ | Otevřeno ($1.800\text{ m}$) |
-| **W6 Sever** | 1.09 Tech. místnost| Západní | $Y \in [8.375, 9.175]\text{ m}$ (šířka $0.80\text{ m}$) | $1.750\text{ m}$ | Otevřeno ($1.800\text{ m}$) |
+| **W6 Jih** | 1.08 WC | Západní | $Y \in [7.200, 8.000]\text{ m}$ (šířka $0.80\text{ m}$) | $1.350\text{ m}$ | Překlad $1.600 \to 1.800\text{ m}$ (světlost $0.25\text{ m}$) |
+| **W6 Sever** | 1.09 Tech. místnost| Západní | $Y \in [8.375, 9.175]\text{ m}$ (šířka $0.80\text{ m}$) | $1.350\text{ m}$ | Překlad $1.600 \to 1.800\text{ m}$ (světlost $0.25\text{ m}$) |
 
-### 3.1.1 Okenní rámy a parapety (`Window_Frames_and_Sills`)
-Všech 9 oken obvodových stěn je osazeno čistými obvodovými rámy a oboustrannými parapety bez zasklení či dělicích sloupků, takže otvory zůstávají vzdušné a otevřené do místností:
-1. **Konstrukce obvodového rámu**:
-   - **Hloubka profilu**: $70\text{ mm}$ ($0.070\text{ m}$).
-   - **Zapuštění od vnějšího líce fasády**: $120\text{ mm}$ ($12\text{ cm}$ vnější špaleta).
-   - **Šířka bočních vlysů (jambs)**: $60\text{ mm}$ ($0.060\text{ m}$), stoupající od parapetu do řezové výšky $Z = 1.800\text{ m}$, kde lícuje se stěnou.
-   - **Spodní vlys (rail)**: Výška $45\text{ mm}$ ležící na parapetním zdivu.
-   - **Vnitřek otvoru**: Zcela volný (bez skla a bez příček).
-   - **Materiál**: `Mat_Roof_Soffit` (antracitový `#1E1E20`, RAL 7016, roughness 0.50).
-2. **Venkovní parapet s okapovým nosem (Exterior Sill with Downward Drip Nose)**:
+### 3.1.1 Okenní rámy, parapety a zasklení (`Window_Frames_and_Sills`, `Window_Glass`)
+Otvory oken jsou architektonicky diferencovány podle typu:
+1. **Velká obytná okna (otevřené řezy)**:
+   - 6 oken (pokoje 1.05, 1.06, 1.07, obývací pokoj 1.04 východ, kuchyně 1.03).
+   - Otevřený vnitřek bez skla pro vzdušný řezový pohled do interiéru.
+   - Svislé vlysy stoupají do $Z = 1.800\text{ m}$, spodní vlys výšky $45\text{ mm}$.
+2. **Malá větrací okna s překladem a sklem (koupelna 1.10, WC 1.08, technická 1.09)**:
+   - **Plný stěnový překlad (`Exterior_Walls`)**: Horní výřezy jsou zcela uzavřeny plným zdivem překladu v rozsahu $Z \in [1.600, 1.800]\text{ m}$ (tloušťka překladu $20\text{ cm}$). Střešní římsa (`Roof_Soffit_Cornice`) sedí na souvislém pevném zdivu.
+   - **Materiál překladu**: Exteriér a horní plocha v `Mat_Exterior_Wall`. Vnitřní plocha překladu koupelny ($Y = 11.635\text{ m}$, $Z \in [1.600, 1.800]\text{ m}$) nese keramický obklad `koupelna stena` se spojitým UV navazujícím na okolní stěny.
+   - **Snížený parapet**: Spodní hrana parapetního zdiva snížena o $0.25\text{ m}$ na jednotnou kótu $Z_{\text{sill}} = 1.350\text{ m}$, čímž okna získávají světlost $250\text{ mm}$ ($25\text{ cm}$) a nejsou stlačena do štěrbiny. Na západní fasádě tvoří WC a technická místnost perfektně zarovnanou symetrickou dvojici.
+   - **Plný čtyřstranný rám**: Boční vlysy tl. $60\text{ mm}$, spodní i horní vlys tl. $35\text{ mm}$ ($Z \in [1.350, 1.385]\text{ m}$ a $Z \in [1.565, 1.600]\text{ m}$).
+   - **Zasklení (`Window_Glass`)**: Architektonické čiré sklo (`Glass_Clear`, Glass BSDF, IOR 1.52, tloušťka $8\text{ mm}$) vsazené do středu profilu rámu.
+3. **Venkovní parapet s okapovým nosem (Exterior Sill with Downward Drip Nose)**:
    - **Materiál**: `Mat_Roof_Soffit` (antracitový plech ladící s atikou i rámy).
    - **Vodorovná deska**: Tloušťka $20\text{ mm}$ ($Z \in [Z_{\text{sill}} - 0.005, Z_{\text{sill}} + 0.015]\text{ m}$), vyložená $35\text{ mm}$ před vnější líc fasády s bočními lemy ($20\text{ mm}$ uši).
    - **Převislý okapový nos (drip nose)**: Šířka $15\text{ mm}$ na vnějším čele parapetu, spuštěný o $20\text{ mm}$ dolů ($Z \in [Z_{\text{sill}} - 0.025, Z_{\text{sill}} - 0.005]\text{ m}$).
    - **Čelní pohledová výška**: Celkem $40\text{ mm}$ fasády parapetu vytvářející zřetelnou architektonickou spáru a vržený stín na fasádní omítku pod oknem.
-3. **Vnitřní parapetní deska s převislým nosem (Interior Sill with Downward Nose)**:
+4. **Vnitřní parapetní deska s převislým nosem (Interior Sill with Downward Nose)**:
    - **Materiál**: `Mat_Roof_Soffit` (antracitový materiál ladící s vnějším parapetem i atikou).
    - **Horizontální deska**: Tloušťka $20\text{ mm}$ ($Z \in [Z_{\text{sill}}, Z_{\text{sill}} + 0.020]\text{ m}$), vyložená $25\text{ mm}$ před líc vnitřní omítky do místnosti s bočními přesahy $20\text{ mm}$.
    - **Převislý nos parapetu (lip / apron)**: Šířka $15\text{ mm}$ na čele desky, spuštěný o $20\text{ mm}$ dolů ($Z \in [Z_{\text{sill}} - 0.020, Z_{\text{sill}}]\text{ m}$), vytvářející klasický $40\text{ mm}$ vysoký čelní profil s reálným vrženým stínem na stěnu pod oknem v interiéru.
-4. **Zkosení hran**: Modifikátor `Bevel` $2\text{ mm}$ s úhlem $45^\circ$ a vytvrzenými normálami (`harden_normals = True`).
+5. **Zkosení hran**: Modifikátor `Bevel` $2\text{ mm}$ s úhlem $45^\circ$ a vytvrzenými normálami (`harden_normals = True`).
 
 ### 3.2 Konstrukční usazení vchodových dveří a eliminace mezer
 Vchodové dveře sestávají z prvků:
