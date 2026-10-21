@@ -18,3 +18,8 @@ __pycache__/
 Thumbs.db
 *.tmp
 temp_*
+ 
+# Archives
+*.zip
+*.tar.gz
+*.7z

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KronoSHOP</title>
+    <link rel="icon" href="/media/1a/16/87/1700827358/favicon.ico?ts=1700827358" />
+    <link href="/bundles/customkronotheme/assets/css/location.css" rel="stylesheet" />
+</head>
+
+<body>
+<section class="shops-container">
+    <div class="logo">
+        <img src="/media/86/c7/e2/1700827296/1-logo.svg" alt="krono-shop logo" />
+    </div>
+    <div class="heading">
+        <h1>Please select your Country and Language</h1>
+    </div>
+    <div class="shops-wrap">
+                    <div class="shop">
+                <div class="shop-title space-b">
+                    <img style="margin-right: 1rem" class="earth-img" src="/media/0e/d1/0b/1700827384/reglobe.png" alt="flag" />
+                    <p class="country">INTERNATIONAL <span>(samples)</span></p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/int/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/21/7c/85/1700827317/austria.jpg" alt="flag" />
+                    <p class="country">AUSTRIA</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/at/de">Deutsch</a>
+                                            <a  href="https://krono-shop.com/at/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/7d/63/e0/1700827313/bulgaria.jpg" alt="flag" />
+                    <p class="country">BULGARIA</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/bg/bg">Български език</a>
+                                            <a  href="https://krono-shop.com/bg/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/3c/1d/a1/1700827331/croatia.jpg" alt="flag" />
+                    <p class="country">CROATIA</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/hr/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/b3/f4/08/1700827323/czech-republic.jpg" alt="flag" />
+                    <p class="country">CZECH REPUBLIC</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/cz/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/3b/a1/bf/1700827341/greece.jpg" alt="flag" />
+                    <p class="country">GREECE</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/gr/el">Ελληνικά</a>
+                                            <a  href="https://krono-shop.com/gr/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/6f/df/10/1700827314/hungary.jpg" alt="flag" />
+                    <p class="country">HUNGARY</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/hu/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/80/5a/b1/1700827315/italy.jpg" alt="flag" />
+                    <p class="country">ITALY</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/it/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/f4/fd/5a/1700827316/romania.jpg" alt="flag" />
+                    <p class="country">ROMANIA</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/ro/en">English</a>
+                                            <a  href="https://krono-shop.com/ro/ro">Română</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/ee/fa/2f/1700827322/slovenia.jpg" alt="flag" />
+                    <p class="country">SLOVENIA</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/si/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/ae/69/ab/1700827329/slovakia.jpg" alt="flag" />
+                    <p class="country">SLOVAKIA</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/sk/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/54/08/61/1700827316/belgium.jpg" alt="flag" />
+                    <p class="country">BELGIUM</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/be/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/17/7e/e5/1700827323/cyprus.jpg" alt="flag" />
+                    <p class="country">CYPRUS</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/cy/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/01/c1/1e/1700827323/denmark.jpg" alt="flag" />
+                    <p class="country">DENMARK</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/dk/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/57/33/c3/1700827318/estonia.jpg" alt="flag" />
+                    <p class="country">ESTONIA</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/ee/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/5d/c7/b9/1700827325/finland.jpg" alt="flag" />
+                    <p class="country">FINLAND</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/fi/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/36/40/6e/1700827317/france.jpg" alt="flag" />
+                    <p class="country">FRANCE</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/fr/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/b1/09/8a/1700827317/ireland.jpg" alt="flag" />
+                    <p class="country">IRELAND</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/ie/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/6e/57/54/1700827317/latvia.jpg" alt="flag" />
+                    <p class="country">LATVIA</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/lv/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/2e/f5/08/1700827314/lithuania.jpg" alt="flag" />
+                    <p class="country">LITHUANIA</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/lt/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/4c/77/a0/1700827316/luxembourg.jpg" alt="flag" />
+                    <p class="country">LUXEMBOURG</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/lu/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/9e/5b/39/1700827315/malta.jpg" alt="flag" />
+                    <p class="country">MALTA</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/mt/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/b7/05/1a/1700827319/netherlands.jpg" alt="flag" />
+                    <p class="country">NETHERLANDS</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/nl/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/33/ed/03/1700827314/poland.jpg" alt="flag" />
+                    <p class="country">POLAND</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/pl/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/ce/46/b7/1700827326/portugal.jpg" alt="flag" />
+                    <p class="country">PORTUGAL</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/pt/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/bb/88/24/1700827330/spain.jpg" alt="flag" />
+                    <p class="country">SPAIN</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/es/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/a0/3c/53/1700827326/sweden.jpg" alt="flag" />
+                    <p class="country">SWEDEN</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/se/en">English</a>
+                                    </p>
+            </div>
+                    <div class="shop">
+                <div class="shop-title">
+                    <img  src="/media/e2/73/60/1700827315/germany.jpg" alt="flag" />
+                    <p class="country">GERMANY</p>
+                </div>
+                <p>
+                                            <a  href="https://krono-shop.com/de/de">Deutsch</a>
+                                            <a  href="https://krono-shop.com/de/en">English</a>
+                                    </p>
+            </div>
+            </div>
+</section>
+<footer>
+    <div class="follow-us">
+        <p>FOLLOW US</p>
+        <div class="location-socials">
+            <a href="https://www.facebook.com/KronoShopOfficial/"><img src="/media/1b/72/74/1700827275/facebook-picto.png"
+                                                                       alt="facebook logo" /></a>
+            <a href="https://www.instagram.com/krono.shop"><img src="/media/20/7a/ae/1700827277/instagram-picto.png"
+                                                                alt="instagram logo" /></a>
+        </div>
+    </div>
+    <div class="payments">
+        <ul>
+            <li>Secure Payments With</li>
+            <li>
+                <img src="/media/7b/29/38/1700827394/visa.png" alt="visa logo" />
+            </li>
+            <li>
+                <img src="/media/26/2a/99/1700827391/mastercard_logo.png" alt="mastercard logo" />
+            </li>
+            <li>
+                <img src="/media/c5/68/ae/1712747706/diners-logo.png" alt="diner's club logo" />
+            </li>
+            <li>
+                <img src="/media/7b/71/32/1712748222/banktransfer.svg" alt="bank transfer logo" />
+            </li>
+            <li>
+                <img src="/media/7a/f3/dd/1700827310/secure-paypal-logo.png" alt="paypal logo" />
+            </li>
+            <li>
+                <img src="/media/69/58/07/1715242339/sectigo_trust_seal_lg_140x54.png" alt="secured by sectigo logo" />
+            </li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Kronoplus Limited</p>
+    </div>
+</footer>
+</body>
+
+</html>
