@@ -1,0 +1,19 @@
+Proveď optimalizaci scény pro fotorealistický architektonický render s následujícími úpravami:
+
+1. Geometrie zdí (Bevel):
+- Na všechny zdi domu aplikuj modifikátor Bevel se zkosením (Width) 0.012 m a 3 segmenty, s aktivovanou volbou "Harden Normals", aby hrany chytaly přirozené odlesky světla a ztratily dokonale ostrý "low-poly/cartoon" vzhled.
+
+2. Materiál stěn (Omítka):
+- Nahraď plochou bílou barvu vnitřních a vnějších stěn materiálem realistické bílé omítky (white wall plaster / subtle paint texture) s mírným bumpem a roughness cca 0.7–0.8, aby na stěnách vznikly měkké mikrostíny.
+
+3. Změkčení osvětlení (Soft Shadows):
+- U všech bodových a plošných světel v interiéru zvětši parametr Radius / Size na rozmezí 0.25 m až 0.4 m, aby vrhala přirozeně měkké stíny bez ostrých ořezaných hran na podlahu a nábytek.
+- Sjednoť barevnou teplotu interiérových světel na teplou bílou (kolem 3000 K).
+
+4. Ambientní noční světlo (World Background):
+- V nastavení World nastav ambientní pozadí na velmi tmavě chladnou modrou barvu (např. hex #060913) s nízkou intenzitou (Strength cca 0.15), aby okolí domu nebylo v absolutní mrtvé černé a vnější stěny měly jemný noční kontrast.
+
+5. Správa barev (Color Management):
+- V Render Properties -> Color Management nastav:
+  * View Transform: AgX (pokud není dostupné, použij Filmic)
+  * Look: Medium High Contrast
