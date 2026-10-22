@@ -27,3 +27,9 @@ temp_*
 # Reference photos upload folders
 realne fotky/
 realene foto/
+
+# One-off scratch scripts
+scratch/
+!scratch/build_final_scala.py
+!scratch/create_alfa_backup.py
+
