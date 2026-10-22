@@ -1,4 +1,4 @@
-# BlenderHome3D
+﻿# BlenderHome3D
 
 > **1:1 Parametrický a procedurální 3D model rodinného domu v Blenderu 5.2+**  
 > Kompletní architektonický model s reálnou výškou stěn $2.5\,\text{m}$, přesným spárořezem keramické dlažby navazujícím na sokly, začištěnými stavebními otvory, 100% ortogonální základovou deskou, elektroinstalací a PBR materiály.
@@ -7,13 +7,9 @@
 
 ## 📸 Náhledy a Výsledky Modelování
 
-| Celkový izometrický pohled | Koupelna (dřevo + velkoformát) | Technická místnost a soklíky |
-| :---: | :---: | :---: |
-| ![Půdorys celkový](dum_pudorys_overview.png) | ![Koupelna](bathroom_full_view.png) | ![Technická místnost](tech_south_wall_view.png) |
-
-| Spárořez WC | Masivní práh 104_111 | Čistý HS portál terasa |
-| :---: | :---: | :---: |
-| ![WC obklad](wc_interior_view.png) | ![Prah 104_111](threshold_104_111_view.png) | ![Patio práh](patio_threshold_view.png) |
+| Denní režim (Slunečno 5500 K + Sky Fill) | Noční režim (#02050D ambient + 3000 K teplé světlo + OLED TV) |
+| :---: | :---: |
+| ![Denní režim](dum_pudorys_daylight.png) | ![Noční režim](dum_pudorys_night.png) |
 
 ---
 
