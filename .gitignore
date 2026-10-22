@@ -23,3 +23,7 @@ temp_*
 *.zip
 *.tar.gz
 *.7z
+
+# Reference photos upload folders
+realne fotky/
+realene foto/
