@@ -49,6 +49,7 @@ Jednotlivé vrstvy s transparentním pozadím pro dynamické spínání v Home A
 | **Terasa levá strana** | [![Terasa levá](renders_ha_2.0/terasa%20leve.png)](renders_ha_2.0/terasa%20leve.png) | `renders_ha_2.0/terasa leve.png` |
 | **Terasa pravá strana** | [![Terasa pravá](renders_ha_2.0/terasa%20prave.png)](renders_ha_2.0/terasa%20prave.png) | `renders_ha_2.0/terasa prave.png` |
 | **Venkovní podhledy** | [![Venkovní osvětlení](renders_ha_2.0/venkovni%20osvetleni.png)](renders_ha_2.0/venkovni%20osvetleni.png) | `renders_ha_2.0/venkovni osvetleni.png` |
+| **Robotický vysavač Dreame L40 Ultra (běh)** | [![Vysavač Dreame](renders_ha_2.0/vysavac.png)](renders_ha_2.0/vysavac.png) | `renders_ha_2.0/vysavac.png` |
 
 ---
 
@@ -112,6 +113,11 @@ Jednotný prémiový dekor dubu `Mat_Kronospan_K003_Gold_Craft_Oak` je apliková
 ### 4.4 Koupelna a walk-in sprchová zástěna (1.10)
 - Koupelna vybavena autentickou walk-in sprchovou zástěnou z čirého bezpečnostního skla s černým kovovým lemováním a stropní stabilizační vzpěrou dle reálné fotodokumentace.
 
+### 4.5 Robotický vysavač Dreame L40 Ultra (aktivní světla na vypínání)
+- **Kolekce `Dreame_Active_Lights`**: Obsahuje svítící prvky na vysavači s 1-klik přepínáním v Outlineru (ikona oka/kamery) pro renderování běžícího vysavače.
+- **Přední LED světlomety**: Boostnuté čočky (`Mat_Dreame_Headlight_Active`, síla 350) + směrové kužely (`Light_Dreame_Headlights_Beam`, 55W celkem) osvětlující dřevěnou podlahu před vysavačem.
+- **Stavový indikátor na těle**: Centrální zapínací tlačítko s ledově bílým podsvícením (`Mat_Dreame_Button_Active`, síla 120), které je zřetelně viditelné i z horního izometrického pohledu.
+
 | Žaluzie v ložnici | Obývací pokoj s dekorem K003 |
 | :---: | :---: |
 | ![Žaluzie](assets/previews/crop_day_bedroom_blinds.png) | ![Obývací pokoj](assets/previews/crop_day_living_light.png) |
@@ -131,6 +137,11 @@ Jednotný prémiový dekor dubu `Mat_Kronospan_K003_Gold_Craft_Oak` je apliková
 Pro znovuvytvoření a namapování oficiální CAD geometrie vozu Škoda Scala:
 ```powershell
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b "dum_pudorys.blend" -P "scratch/build_final_scala.py"
+```
+
+### Přepnutí světel vysavače Dreame L40 Ultra:
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b "dum_pudorys.blend" -P "toggle_dreame_lights.py"
 ```
 
 ### Vygenerování záložního archivu projektu

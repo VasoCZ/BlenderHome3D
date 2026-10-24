@@ -13,6 +13,8 @@ files_to_pack = [
     "dum_pudorys_night_dark.png",
     "build_shower_screen.py",
     "render_and_save_shower.py",
+    "apply_dreame_active_lights.py",
+    "toggle_dreame_lights.py",
     "build_full_skoda_scala.py",
     "build_mammotion_yuka.py",
     "apply_terrace_fix.py",
