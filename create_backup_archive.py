@@ -42,6 +42,12 @@ if os.path.exists(prev_dir):
     for f in os.listdir(prev_dir):
         files_to_pack.append(os.path.join("assets", "previews", f))
 
+# Add renders_ha_2.0
+ha_dir = os.path.join(project_dir, "renders_ha_2.0")
+if os.path.exists(ha_dir):
+    for f in os.listdir(ha_dir):
+        files_to_pack.append(os.path.join("renders_ha_2.0", f))
+
 print(f"Creating ZIP archive: {zip_out}")
 t0 = time.time()
 with zipfile.ZipFile(zip_out, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=4, allowZip64=True) as z:
