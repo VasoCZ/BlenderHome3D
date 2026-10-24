@@ -4,6 +4,9 @@
 *.blend2
 *.blend@
 *.blend_bak*
+*.blend.bak*
+*.bak*
+*.bak_*
 
 # Allow lightweight tracked assets (<10MB)
 !assets/*.blend
@@ -18,7 +21,8 @@ __pycache__/
 Thumbs.db
 *.tmp
 temp_*
- 
+bug.png
+
 # Archives
 *.zip
 *.tar.gz
@@ -32,4 +36,3 @@ realene foto/
 scratch/
 !scratch/build_final_scala.py
 !scratch/create_alfa_backup.py
-

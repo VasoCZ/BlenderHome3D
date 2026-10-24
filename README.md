@@ -3,7 +3,7 @@
 > **1:1 Parametrický a fotorealistický 3D model rodinného domu v Blenderu 5.2+**  
 > Kompletní architektonický model připravený pro integraci do **Home Assistant Floorplan**: reálná výška stěn $2.5\,\text{m}$, 1-click kolekce osvětlení (denní / noční režimy), PBR materiály, autentická venkovní zahrada a oficiální model vozu **Škoda Scala Monte Carlo 2025** na příjezdové cestě.
 
-[![GitHub Release](https://img.shields.io/github/v/release/VasoCZ/BlenderHome3D?label=Verze&color=blue)](https://github.com/VasoCZ/BlenderHome3D/releases/tag/alfa)
+[![GitHub Release](https://img.shields.io/github/v/release/VasoCZ/BlenderHome3D?label=Verze&color=blue)](https://github.com/VasoCZ/BlenderHome3D/releases/tag/v2.0-master)
 [![Blender](https://img.shields.io/badge/Blender-5.2%20LTS-orange.svg)](https://www.blender.org/)
 [![Python](https://img.shields.io/badge/Python-3.11%20%7C%20bpy-blue.svg)](https://docs.blender.org/api/current/)
 [![License](https://img.shields.io/badge/License-MIT%20%2F%20Personal-green.svg)](LICENSE)

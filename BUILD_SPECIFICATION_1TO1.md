@@ -126,15 +126,17 @@ Jednotný prémiový dekor dubu `Mat_Kronospan_K003_Gold_Craft_Oak` je apliková
 
 ### 5.2 Zóny zpevněných ploch
 1. **Přední příjezdová cesta a stání**:
-   - Rozměry: Šířka $6.000\text{ m}$, délka $9.000\text{ m}$ ($X \in [2.19, 8.19]$, $Y \in [-9.0, 0.0]$).
-   - Materiál: Betonová zámková dlažba `Mat_Outdoor_Concrete_Paving` s betonovými obrubníky.
+   - Rozměry: Šířka $6.000\text{ m}$, protažení na jih do $Y = -22.000\text{ m}$ ($X \in [2.19, 8.19]$, $Y \in [-22.0, 0.0]$).
+   - Materiál: Betonová zámková dlažba `Paving Stones` s UV mapováním 1:1 ke skutečným metrům (zajišťuje dokonale jednotnou velikost dlaždic bez deformace) a betonovými obrubníky `Garden_Curbs` po obou stranách.
 2. **Zahradní terasa**:
    - Rozměry: Šířka $5.000\text{ m}$, hloubka $6.000\text{ m}$ ($X \in [5.00, 10.00]$, $Y \in [12.0, 18.0]$).
    - Dilatační spára a zapuštění pod HS portálem na $Z = -0.070\text{ m}$.
 3. **Okapový chodník a kačírek**:
    - Drenážní kačírek podél obvodu celého domu šířky $0.500\text{ m}$.
    - Zahradní obrubníky oddělující travnatou plochu.
-4. **Robotická sekačka Mammotion Yuka 2000**:
+4. **Zahrada a trávník (`Lawn_Ground`)**:
+   - Travnatá plocha $55.0 \times 55.0\text{ m}$ ($X \in [-25.0, 30.0]$, $Y \in [-25.0, 30.0]$ na $Z = -0.025\text{ m}$), pokrývající bez mezer kompletní 4K zorné pole kamery bez použití alpha fade (plné krytí Alpha = 1.0).
+5. **Robotická sekačka Mammotion Yuka 2000**:
    - Umístění: Severní zahrada u stěny technické místnosti ($X \approx 0.60\text{ m}$, $Y \approx 12.30\text{ m}$).
    - Betonová podesta tl. $6\text{ cm}$ se zastřešenou nabíjecí stanicí (originální garáž Yuka).
 
@@ -201,20 +203,21 @@ Všechna svítidla jsou přesně umístěna ve 3D prostoru na výšce stropních
 | `Light_1.10_Koupelna_Vplus` | POINT | $(1.62, 10.600, 2.40)$| 50 W | $(1.0, 0.97, 0.92)$ | 0.225 m |
 | `Light_1.11_Chodba_M1_Bath` | POINT | $(2.375, 9.200, 2.40)$ | 25 W | $(1.0, 0.95, 0.88)$ | 0.120 m |
 | `Light_1.11_Chodba_M2_WC` | POINT | $(2.375, 7.650, 2.40)$ | 25 W | $(1.0, 0.95, 0.88)$ | 0.120 m |
-| **Fasádní bodovky (Soffit 1 až 5)**| SPOT | $Z = 2.45\text{ m}$, kužel $50^\circ$| 20 W | $(1.0, 0.94, 0.82)$ | Směr dolů |
-| **Terasa nástěnná světla** | POINT | $Z = 2.40\text{ m}$ (na fasádě)| 35 W | $(1.0, 0.94, 0.82)$ | 0.150 m |
-| **Slunce (Sun_Fill)** | SUN | $(15.0, -10.0, 25.0)$ | 2.0 W | $(1.0, 0.98, 0.95)$ | Rotace $50^\circ, 20^\circ, -35^\circ$ |
+| **Všechna světla (interiér i exteriér)** | AREA / SPOT / SUN | Dle rozpisu místností | Kalibrováno | `RGB (1.0, 1.0, 1.0)` pure white `#FFFFFF` | Bez barevného zkreslení |
+| **Slunce (Sun_Fill)** | SUN | $(15.0, -10.0, 25.0)$ | 2.0 W | `RGB (1.0, 1.0, 1.0)` `#FFFFFF` | Rotace $50^\circ, 20^\circ, -35^\circ$ |
 
 ---
 
 ## 8. Kamera a Vykreslovací Parametry (Isometric View)
 
 - **Objekt**: `Isometric_Camera`
-- **Typ**: `ORTHO` (ortografická izometrická kamera)
-- **Ortho Scale**: `18.0` (rámuje půdorys domu s chodníky a příjezdovou cestou při výšce stěn $2.5\text{ m}$)
-- **Cílový bod (Target)**: $\vec{T} = (5.0, 6.0, 1.25)$
-- **Směrový vektor izometrie**: $\vec{D} = \frac{(-1.0, -1.0, \sqrt{2})}{\|\dots\|}$
-- **Vzdálenost kamery**: $35.0\text{ m}$
+- **Typ**: `PERSP` (perspektivní kamera)
+- **Ohnisková vzdálenost (Lens)**: `50.0 mm` (senzor `50.0 mm`)
+- **Pozice kamery**: `[14.794, 11.014, 15.908]`
+- **Rotace kamery**: `[34.6°, 0.0°, 117.6°]` (Euler `XYZ`: `[0.6039, -0.0000, 2.0525]`)
+- **Rozlišení scény**: `3840 × 2160` (100% 4K UHD, poměr stran 16:9)
+- **Film Transparent**: `True` (zapnuto)
+- **Engine**: Cycles (GPU Compute, OpenImageDenoise)
 
 ---
 
@@ -225,12 +228,17 @@ Všechna svítidla jsou přesně umístěna ve 3D prostoru na výšce stropních
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b "dum_pudorys.blend" -P "render_exact_user_modes.py"
 ```
 
-### 9.2 Sestavení modelu vozu z CAD podkladů:
+### 9.2 Sestavení skleněné sprchové zástěny:
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b "dum_pudorys.blend" -P "build_shower_screen.py"
+```
+
+### 9.3 Sestavení modelu vozu z CAD podkladů:
 ```powershell
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b "dum_pudorys.blend" -P "scratch/build_final_scala.py"
 ```
 
-### 9.3 Vytvoření záložního archivu Alfa:
+### 9.4 Vytvoření záložního archivu projektu:
 ```powershell
-& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P "scratch/create_alfa_backup.py"
+python "create_backup_archive.py"
 ```
